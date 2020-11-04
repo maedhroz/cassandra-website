@@ -1022,6 +1022,10 @@ Dropped writes are stored and retried by <code class="docutils literal notransla
 <td>Timer</td>
 <td>The time spent waiting on CL fsync; for Periodic this is only occurs when the sync is lagging its sync interval.</td>
 </tr>
+<tr class="row-odd"><td>OverSizedMutations</td>
+<td>Meter</td>
+<td>Throughput for mutations that exceed limit.</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1199,9 +1203,9 @@ lower by recycling on and off heap buffers.</p>
 </dl>
 <table border="1" class="docutils">
 <colgroup>
-<col width="24%" />
-<col width="25%" />
-<col width="51%" />
+<col width="13%" />
+<col width="14%" />
+<col width="72%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Name</th>
@@ -1210,17 +1214,29 @@ lower by recycling on and off heap buffers.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>connectedNativeClients</td>
+<tr class="row-even"><td>ConnectedNativeClients</td>
 <td>Gauge&lt;Integer&gt;</td>
 <td>Number of clients connected to this nodes native protocol server</td>
 </tr>
-<tr class="row-odd"><td>connections</td>
+<tr class="row-odd"><td>Connections</td>
 <td>Gauge&lt;List&lt;Map&lt;String, String&gt;&gt;</td>
 <td>List of all connections and their state information</td>
 </tr>
-<tr class="row-even"><td>connectedNativeClientsByUser</td>
+<tr class="row-even"><td>ConnectedNativeClientsByUser</td>
 <td>Gauge&lt;Map&lt;String, Int&gt;</td>
 <td>Number of connnective native clients by username</td>
+</tr>
+<tr class="row-odd"><td>ClientsByProtocolVersion</td>
+<td>Gauge&lt;List&lt;Map&lt;String, String&gt;&gt;&gt;</td>
+<td>List of up to last 100 connections including protocol version. Can be reset with clearConnectionHistory operation in org.apache.cassandra.db:StorageService mbean.</td>
+</tr>
+<tr class="row-even"><td>RequestsSize</td>
+<td>Gauge&lt;Long&gt;</td>
+<td>How many concurrent bytes used in currently processing requests</td>
+</tr>
+<tr class="row-odd"><td>RequestsSizeByIpDistribution</td>
+<td>Histogram</td>
+<td>How many concurrent bytes used in currently processing requests by different ips</td>
 </tr>
 </tbody>
 </table>

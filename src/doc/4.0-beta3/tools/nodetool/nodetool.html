@@ -96,10 +96,10 @@ extra-footer: '
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
 <dl class="docutils">
 <dt>usage: nodetool [(-u &lt;username&gt; | –username &lt;username&gt;)]</dt>
-<dd>[(-pw &lt;password&gt; | –password &lt;password&gt;)] [(-h &lt;host&gt; | –host &lt;host&gt;)]
-[(-p &lt;port&gt; | –port &lt;port&gt;)]
-[(-pwf &lt;passwordFilePath&gt; | –password-file &lt;passwordFilePath&gt;)]
-[(-pp | –print-port)] &lt;command&gt; [&lt;args&gt;]</dd>
+<dd>[(-h &lt;host&gt; | –host &lt;host&gt;)] [(-pw &lt;password&gt; | –password &lt;password&gt;)]
+[(-pp | –print-port)] [(-p &lt;port&gt; | –port &lt;port&gt;)]
+[(-pwf &lt;passwordFilePath&gt; | –password-file &lt;passwordFilePath&gt;)] &lt;command&gt;
+[&lt;args&gt;]</dd>
 </dl>
 <p>The most commonly used nodetool commands are:</p>
 <blockquote>
@@ -144,6 +144,8 @@ extra-footer: '
 <p><a class="reference internal" href="getconcurrentcompactors.html"><span class="doc">getconcurrentcompactors</span></a> -       Get the number of concurrent compactors in the system.</p>
 <p><a class="reference internal" href="getconcurrentviewbuilders.html"><span class="doc">getconcurrentviewbuilders</span></a> -     Get the number of concurrent view builders in the system</p>
 <p><a class="reference internal" href="getendpoints.html"><span class="doc">getendpoints</span></a> -                  Print the end points that owns the key</p>
+<p><a class="reference internal" href="getfullquerylog.html"><span class="doc">getfullquerylog</span></a> -
+<span class="xref std std-doc">print</span> -  configuration of fql if enabled, otherwise the configuration reflected in cassandra.yaml</p>
 <p><a class="reference internal" href="getinterdcstreamthroughput.html"><span class="doc">getinterdcstreamthroughput</span></a> -    Print the Mb/s throughput cap for inter-datacenter streaming in the system</p>
 <p><a class="reference internal" href="getlogginglevels.html"><span class="doc">getlogginglevels</span></a> -              Get the runtime logging levels</p>
 <p><a class="reference internal" href="getmaxhintwindow.html"><span class="doc">getmaxhintwindow</span></a> -              Print the max hint window in ms</p>

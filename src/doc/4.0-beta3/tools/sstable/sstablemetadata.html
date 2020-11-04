@@ -113,17 +113,6 @@ extra-footer: '
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <p>sstablemetadata &lt;options&gt; &lt;sstable filename(s)&gt;</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="24%" />
-<col width="76%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>–gc_grace_seconds &lt;arg&gt;</td>
-<td>The gc_grace_seconds to use when calculating droppable tombstones</td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="section" id="print-all-the-metadata">
 <h2>Print all the metadata<a class="headerlink" href="#print-all-the-metadata" title="Permalink to this headline">¶</a></h2>
@@ -340,7 +329,7 @@ Estimated droppable tombstones: 4.0E-5
 sstablemetadata --gc_grace_seconds 4700 /var/lib/cassandra/data/keyspace1/standard1-41b52700b4ed11e896476d2c86545d91/mc-12-big-Data.db | grep &quot;Estimated droppable tombstones&quot;
 Estimated droppable tombstones: 9.61111111111111E-6
 
-# if gc_grace_seconds was configured at 100, none of the tombstones would be currently droppable
+# if gc_grace_seconds was configured at 5000, none of the tombstones would be currently droppable
 sstablemetadata --gc_grace_seconds 5000 /var/lib/cassandra/data/keyspace1/standard1-41b52700b4ed11e896476d2c86545d91/mc-12-big-Data.db | grep &quot;Estimated droppable tombstones&quot;
 Estimated droppable tombstones: 0.0
 </pre></div>

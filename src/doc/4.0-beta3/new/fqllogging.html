@@ -67,6 +67,7 @@ extra-footer: '
 <li class="toctree-l3"><a class="reference internal" href="#logging-sequence">Logging sequence</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-fql">Using FQL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#configuring-fql-in-cassandra-yaml">Configuring FQL in cassandra.yaml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#querying-the-state-of-fql">Querying the state of FQL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#enabling-fql">Enabling FQL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#disabling-or-resetting-fql">Disabling or resetting FQL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fqltool">fqltool</a></li>
@@ -238,6 +239,23 @@ For example: <code class="docutils literal notranslate"><span class="pre">archiv
 <p>The <code class="docutils literal notranslate"><span class="pre">max_archive_retries</span></code> option sets the max number of retries of failed archive commands. The default is 10.
 For example: <code class="docutils literal notranslate"><span class="pre">max_archive_retries:</span> <span class="pre">10</span></code></p>
 <p>FQL can also be configured using <code class="docutils literal notranslate"><span class="pre">nodetool</span></code> when enabling the feature, and will override any values set in the <cite>cassandra.yaml</cite> file, as discussed in the next section.</p>
+</div>
+</div>
+<div class="section" id="querying-the-state-of-fql">
+<h2>Querying the state of FQL<a class="headerlink" href="#querying-the-state-of-fql" title="Permalink to this headline">¶</a></h2>
+<p>In order to know what state FQL is in, you may use nodetool command <code class="docutils literal notranslate"><span class="pre">getfullquerylog</span></code>. It will print out whether FQL is enabled
+and with what configuration options; if you reset or stop FQL, the configuration displayed will be taken from
+configuration in <code class="docutils literal notranslate"><span class="pre">cassandra.yaml</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nodetool getfullquerylog
+enabled             true
+log_dir             /path/to/fql/log/dir
+archive_command     /usr/local/bin/archiveit.sh %path
+roll_cycle          HOURLY
+block               true
+max_log_size        17179869184
+max_queue_weight    268435456
+max_archive_retries 10
+</pre></div>
 </div>
 </div>
 <div class="section" id="enabling-fql">

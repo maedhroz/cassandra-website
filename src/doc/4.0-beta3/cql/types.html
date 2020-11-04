@@ -68,8 +68,9 @@ extra-footer: '
 <li class="toctree-l3"><a class="reference internal" href="#working-with-times">Working with times</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#working-with-durations">Working with durations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#collections">Collections</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#user-defined-types">User-Defined Types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tuples">Tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-defined-types">User-Defined Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#frozen-types">Frozen Types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#custom-types">Custom Types</a></li>
 </ul>
 </li>
@@ -537,10 +538,32 @@ of conditional write that have their own cost).</p>
 <p>Lastly, as for <a class="reference internal" href="#maps"><span class="std std-ref">maps</span></a>, TTLs when used only apply to the newly inserted values.</p>
 </div>
 </div>
+<div class="section" id="tuples">
+<span id="id8"></span><h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h2>
+<p>A tuple is a fixed-length set of values (fields) where each can be of a different data type. Tuple types and tuple
+literals are defined by:</p>
+<pre>
+<strong id="grammar-token-tuple-type">tuple_type   </strong> ::=  TUPLE '&lt;' <a class="reference internal" href="#grammar-token-cql-type"><code class="xref docutils literal notranslate"><span class="pre">cql_type</span></code></a> ( ',' <a class="reference internal" href="#grammar-token-cql-type"><code class="xref docutils literal notranslate"><span class="pre">cql_type</span></code></a> )* '&gt;'
+<strong id="grammar-token-tuple-literal">tuple_literal</strong> ::=  '(' <a class="reference internal" href="definitions.html#grammar-token-term"><code class="xref docutils literal notranslate"><span class="pre">term</span></code></a> ( ',' <a class="reference internal" href="definitions.html#grammar-token-term"><code class="xref docutils literal notranslate"><span class="pre">term</span></code></a> )* ')'
+</pre>
+<p>and can be used thusly:</p>
+<div class="highlight-cql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">contacts</span> <span class="p">(</span>
+    <span class="k">user</span> <span class="nb">text</span><span class="p">,</span>
+    <span class="n">phones</span> <span class="k">tuple</span><span class="o">&lt;</span><span class="nb">text</span><span class="p">,</span> <span class="nb">text</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">contacts</span> <span class="p">(</span><span class="k">user</span><span class="p">,</span> <span class="n">phones</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">,</span> <span class="s1">&#39;(555) 555-1234&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Unlike other “composed” types (collections and UDT), a tuple is always <a class="reference internal" href="#frozen"><span class="std std-ref">frozen</span></a>. It is not possible to
+update only some elements of a tuple (without updating the whole tuple). A tuple literal must have the same number of
+items as its declaring type (some of those values can be null but they must be explicitly declared).</p>
+</div>
 <div class="section" id="user-defined-types">
 <span id="udts"></span><h2>User-Defined Types<a class="headerlink" href="#user-defined-types" title="Permalink to this headline">¶</a></h2>
-<p>CQL support the definition of user-defined types (UDT for short). Such a type can be created, modified and removed using
-the <a class="reference internal" href="#grammar-token-create-type-statement"><code class="xref std std-token docutils literal notranslate"><span class="pre">create_type_statement</span></code></a>, <a class="reference internal" href="#grammar-token-alter-type-statement"><code class="xref std std-token docutils literal notranslate"><span class="pre">alter_type_statement</span></code></a> and <a class="reference internal" href="#grammar-token-drop-type-statement"><code class="xref std std-token docutils literal notranslate"><span class="pre">drop_type_statement</span></code></a> described below. But
+<p>A User Defined Type (UDT) is a set data fields where each field is named and typed. UDTs allow to store related
+information together within one colum. UDTs can be created, modified and removed using token
+<a class="reference internal" href="#grammar-token-create-type-statement"><code class="xref std std-token docutils literal notranslate"><span class="pre">create_type_statement</span></code></a>, <a class="reference internal" href="#grammar-token-alter-type-statement"><code class="xref std std-token docutils literal notranslate"><span class="pre">alter_type_statement</span></code></a> and <a class="reference internal" href="#grammar-token-drop-type-statement"><code class="xref std std-token docutils literal notranslate"><span class="pre">drop_type_statement</span></code></a> described below. But
 once created, a UDT is simply referred to by its name:</p>
 <pre>
 <strong id="grammar-token-user-defined-type">user_defined_type</strong> ::=  <a class="reference internal" href="#grammar-token-udt-name"><code class="xref docutils literal notranslate"><span class="pre">udt_name</span></code></a>
@@ -581,8 +604,8 @@ it is used, the statement will be a no-op if the type already exists.</li>
 <li>A type is intrinsically bound to the keyspace in which it is created, and can only be used in that keyspace. At
 creation, if the type name is prefixed by a keyspace name, it is created in that keyspace. Otherwise, it is created in
 the current keyspace.</li>
-<li>As of Cassandra 4.0-beta3, UDT have to be frozen in most cases, hence the <code class="docutils literal notranslate"><span class="pre">frozen&lt;address&gt;</span></code> in the table definition
-above. Please see the section on <span class="xref std std-ref">frozen</span> for more details.</li>
+<li>As of Cassandra 3.7, UDT have to be frozen in most cases, hence the <code class="docutils literal notranslate"><span class="pre">frozen&lt;address&gt;</span></code> in the table definition
+above. Please see the section on <a class="reference internal" href="#frozen"><span class="std std-ref">frozen</span></a> for more details.</li>
 </ul>
 </div>
 <div class="section" id="udt-literals">
@@ -641,27 +664,45 @@ still in use by another type, table or function will result in an error.</p>
 is a no-op.</p>
 </div>
 </div>
-<div class="section" id="tuples">
-<span id="id8"></span><h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h2>
-<p>CQL also support tuples and tuple types (where the elements can be of different types). Functionally, tuples can be
-though as anonymous UDT with anonymous fields. Tuple types and tuple literals are defined by:</p>
-<pre>
-<strong id="grammar-token-tuple-type">tuple_type   </strong> ::=  TUPLE '&lt;' <a class="reference internal" href="#grammar-token-cql-type"><code class="xref docutils literal notranslate"><span class="pre">cql_type</span></code></a> ( ',' <a class="reference internal" href="#grammar-token-cql-type"><code class="xref docutils literal notranslate"><span class="pre">cql_type</span></code></a> )* '&gt;'
-<strong id="grammar-token-tuple-literal">tuple_literal</strong> ::=  '(' <a class="reference internal" href="definitions.html#grammar-token-term"><code class="xref docutils literal notranslate"><span class="pre">term</span></code></a> ( ',' <a class="reference internal" href="definitions.html#grammar-token-term"><code class="xref docutils literal notranslate"><span class="pre">term</span></code></a> )* ')'
-</pre>
-<p>and can be used thusly:</p>
-<div class="highlight-cql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">durations</span> <span class="p">(</span>
-    <span class="n">event</span> <span class="nb">text</span><span class="p">,</span>
-    <span class="n">duration</span> <span class="k">tuple</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">text</span><span class="o">&gt;</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">durations</span> <span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;ev1&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">3</span><span class="p">,</span> <span class="s1">&#39;hours&#39;</span><span class="p">));</span>
+<div class="section" id="frozen-types">
+<span id="frozen"></span><h2>Frozen Types<a class="headerlink" href="#frozen-types" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">frozen</span></code> keyword is used to change the way a collection or user-defined type column is serialized. For non-frozen
+collections or UDTs, each value is serialized independently from the other values. This allow update or delete
+operations on a sub-set of the collections or UDTs values. For frozen collections or UDTs all the value are serialized
+as one, disabling the ability to perform partial updates on the values.</p>
+<p>To freeze a column, use the keyword, followed by the type in angle brackets, for instance:</p>
+<div class="highlight-cql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">posts</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="nb">int</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+    <span class="n">title</span> <span class="nb">text</span><span class="p">,</span>
+    <span class="n">content</span> <span class="nb">text</span><span class="p">,</span>
+    <span class="n">tags</span> <span class="k">frozen</span><span class="o">&lt;</span><span class="k">set</span><span class="o">&lt;</span><span class="nb">text</span><span class="o">&gt;&gt;</span>
+<span class="p">);</span>
 </pre></div>
 </div>
-<p>Unlike other “composed” types (collections and UDT), a tuple is always <span class="xref std std-ref">frozen</span> (without the need of the
-<cite>frozen</cite> keyword) and it is not possible to update only some elements of a tuple (without updating the whole tuple).
-Also, a tuple literal should always have the same number of value than declared in the type it is a tuple of (some of
-those values can be null but they need to be explicitly declared as so).</p>
+<p>To insert a frozen value, it’s just like a non-frozen column:</p>
+<div class="highlight-cql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">posts</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">tags</span><span class="p">)</span>
+        <span class="k">VALUES</span> <span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="s1">&#39;Even Higher Availability with 5x Faster Streaming in Cassandra 4.0&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Streaming is a process...&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;cassandra&#39;</span><span class="p">,</span> <span class="s1">&#39;availability&#39;</span><span class="p">});</span>
+</pre></div>
+</div>
+<div class="section" id="updating-a-frozen-column">
+<h3>Updating a frozen column<a class="headerlink" href="#updating-a-frozen-column" title="Permalink to this headline">¶</a></h3>
+<p>It’s not possible to update an individual item of a collection:</p>
+<div class="highlight-cql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="n">posts</span> <span class="k">SET</span> <span class="n">tags</span> <span class="o">=</span> <span class="n">tags</span> <span class="o">-</span> <span class="p">{</span><span class="s1">&#39;availability&#39;</span><span class="p">}</span> <span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The above command would result in the following error:</p>
+<div class="highlight-cql notranslate"><div class="highlight"><pre><span></span><span class="n">InvalidRequest</span><span class="p">:</span> <span class="n">Error</span> <span class="k">from</span> <span class="n">server</span><span class="p">:</span> <span class="n">code</span><span class="o">=</span><span class="mf">2200</span> <span class="p">[</span><span class="n">Invalid</span> <span class="n">query</span><span class="p">]</span> <span class="n">message</span><span class="o">=</span><span class="s s-Name">&quot;Invalid operation (tags = tags -</span>
+<span class="s s-Name">{&#39;availability&#39;}) for frozen collection column tags&quot;</span>
+</pre></div>
+</div>
+<p>When there’s a need to update, the full value must be provided:</p>
+<div class="highlight-cql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="n">posts</span> <span class="k">SET</span> <span class="n">tags</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;cassandra&#39;</span><span class="p">}</span> <span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Note the whole value is being replaced, not just the unwanted item. The same is true for appending elements in a
+collection.</p>
+</div>
 </div>
 <div class="section" id="custom-types">
 <span id="id9"></span><h2>Custom Types<a class="headerlink" href="#custom-types" title="Permalink to this headline">¶</a></h2>

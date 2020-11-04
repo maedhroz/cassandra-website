@@ -658,12 +658,30 @@ your system; (8 * number_of_cores) is a good rule of thumb.</p>
 be limited by the less of concurrent reads or concurrent writes.</p>
 <p><em>Default Value:</em> 32</p>
 </div>
+<div class="section" id="networking-cache-size-in-mb">
+<h2><code class="docutils literal notranslate"><span class="pre">networking_cache_size_in_mb</span></code><a class="headerlink" href="#networking-cache-size-in-mb" title="Permalink to this headline">¶</a></h2>
+<p><em>This option is commented out by default.</em></p>
+<p>Maximum memory to use for inter-node and client-server networking buffers.</p>
+<p>Defaults to the smaller of 1/16 of heap or 128MB. This pool is allocated off-heap,
+so is in addition to the memory allocated for heap. The cache also has on-heap
+overhead which is roughly 128 bytes per chunk (i.e. 0.2% of the reserved size
+if the default 64k chunk size is used).
+Memory is only allocated when needed.</p>
+<p><em>Default Value:</em> 128</p>
+</div>
+<div class="section" id="file-cache-enabled">
+<h2><code class="docutils literal notranslate"><span class="pre">file_cache_enabled</span></code><a class="headerlink" href="#file-cache-enabled" title="Permalink to this headline">¶</a></h2>
+<p><em>This option is commented out by default.</em></p>
+<p>Enable the sstable chunk cache.  The chunk cache will store recently accessed
+sections of the sstable in-memory as uncompressed buffers.</p>
+<p><em>Default Value:</em> false</p>
+</div>
 <div class="section" id="file-cache-size-in-mb">
 <h2><code class="docutils literal notranslate"><span class="pre">file_cache_size_in_mb</span></code><a class="headerlink" href="#file-cache-size-in-mb" title="Permalink to this headline">¶</a></h2>
 <p><em>This option is commented out by default.</em></p>
 <p>Maximum memory to use for sstable chunk cache and buffer pooling.
-32MB of this are reserved for pooling buffers, the rest is used as an
-cache that holds uncompressed sstable chunks.
+32MB of this are reserved for pooling buffers, the rest is used for chunk cache
+that holds uncompressed sstable chunks.
 Defaults to the smaller of 1/4 of heap or 512MB. This pool is allocated off-heap,
 so is in addition to the memory allocated for heap. The cache also has on-heap
 overhead which is roughly 128 bytes per chunk (i.e. 0.2% of the reserved size
