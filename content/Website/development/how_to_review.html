@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Review Checklist :: Cassandra Website DEV</title>
+    <link rel="prev" href="how_to_commit.html">
+    <link rel="next" href="patches.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/build">&nbsp;&nbsp;&nbsp;<img src="../../_/img/cassandra_logo.png"></a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://cassandra.apache.org">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/download/">Download</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.11.6/apache-cassandra-3.11.6-bin.tar.gz">Latest</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.11.6/apache-cassandra-3.11.6-bin.tar.gz">3.x</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.0.20/apache-cassandra-3.0.20-bin.tar.gz">3.0</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/2.1.21/apache-cassandra-2.1.21-bin.tar.gz">2.1</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/doc/">Documentation</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/">Latest</a>
+            <a class="navbar-item" href="">3.x</a>
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/old/CQL-3.0.html">3.0</a>
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/old/CQL-2.1.html">2.1</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/community/">Community</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://lists.apache.org/list.html?dev@cassandra.apache.org">Developer Mailing List</a>
+            <a class="navbar-item" href="https://lists.apache.org/list.html?user@cassandra.apache.org">User Mailing List</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/blog/">Blog</a>
+	</div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar2">
+    <div class="navbar2-brand">
+      <a class="navbar2-item href="https://asf.org"><img src="../../_/img/asf_feather.png" height="70%">&nbsp;&nbsp;&nbsp;Apache Software Foundation / Apache Cassandra</a>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Website" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Website</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../bugs.html">How to report bugs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../contactus.html">Contact us</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Contribute to Cassandra code</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="gettingstarted.html">Getting started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ide.html">IDE</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="testing.html">Testing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="code_style.html">Code style</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="how_to_commit.html">How to commit</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="how_to_review.html">How to review</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="patches.html">Patches</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ci.html">CI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dependencies.html">Dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="release_process.html">Release process</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="documentation.html">Contribute to the documentation</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Website</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Cassandra</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../Cassandra/4.0/index.html">4.0-beta1</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../Cassandra/3.11/index.html">3.11</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Website</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Website</a></li>
+    <li><a href="index.html">Contribute to Cassandra code</a></li>
+    <li><a href="how_to_review.html">How to review</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/build/cassandra-site/site-content/source/modules/ROOT/pages/development/how_to_review.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Review Checklist</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>When reviewing tickets in Apache JIRA, the following items should be
+covered as part of the review process:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="general"><a class="anchor" href="#general"></a><strong>General</strong></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Does it conform to the <code>code_style</code> guidelines?</p>
+</li>
+<li>
+<p>Is there any redundant or duplicate code?</p>
+</li>
+<li>
+<p>Is the code as modular as possible?</p>
+</li>
+<li>
+<p>Can any singletons be avoided?</p>
+</li>
+<li>
+<p>Can any of the code be replaced with library functions?</p>
+</li>
+<li>
+<p>Are units of measurement used in the code consistent, both internally
+and with the rest of the ecosystem?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="error-handling"><a class="anchor" href="#error-handling"></a><strong>Error-Handling</strong></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Are all data inputs and outputs checked (for the correct type, length,
+format, and range) and encoded?</p>
+</li>
+<li>
+<p>Where third-party utilities are used, are returning errors being
+caught?</p>
+</li>
+<li>
+<p>Are invalid parameter values handled?</p>
+</li>
+<li>
+<p>Are any Throwable/Exceptions passed to the JVMStabilityInspector?</p>
+</li>
+<li>
+<p>Are errors well-documented? Does the error message tell the user how
+to proceed?</p>
+</li>
+<li>
+<p>Do exceptions propagate to the appropriate level in the code?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="documentation"><a class="anchor" href="#documentation"></a><strong>Documentation</strong></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Do comments exist and describe the intent of the code (the "why", not
+the "how")?</p>
+</li>
+<li>
+<p>Are javadocs added where appropriate?</p>
+</li>
+<li>
+<p>Is any unusual behavior or edge-case handling described?</p>
+</li>
+<li>
+<p>Are data structures and units of measurement explained?</p>
+</li>
+<li>
+<p>Is there any incomplete code? If so, should it be removed or flagged
+with a suitable marker like ‘TODO’?</p>
+</li>
+<li>
+<p>Does the code self-document via clear naming, abstractions, and flow
+control?</p>
+</li>
+<li>
+<p>Have NEWS.txt, the cql3 docs, and the native protocol spec been
+updated if needed?</p>
+</li>
+<li>
+<p>Is the ticket tagged with "client-impacting" and "doc-impacting",
+where appropriate?</p>
+</li>
+<li>
+<p>Has lib/licences been updated for third-party libs? Are they Apache
+License compatible?</p>
+</li>
+<li>
+<p>Is the Component on the JIRA ticket set appropriately?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="testing"><a class="anchor" href="#testing"></a><strong>Testing</strong></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Is the code testable? i.e. don’t add too many or hide dependencies,
+unable to initialize objects, test frameworks can use methods etc.</p>
+</li>
+<li>
+<p>Do tests exist and are they comprehensive?</p>
+</li>
+<li>
+<p>Do unit tests actually test that the code is performing the intended
+functionality?</p>
+</li>
+<li>
+<p>Could any test code use common functionality (e.g. ccm, dtest, or
+CqlTester methods) or abstract it there for reuse?</p>
+</li>
+<li>
+<p>If the code may be affected by multi-node clusters, are there dtests?</p>
+</li>
+<li>
+<p>If the code may take a long time to test properly, are there CVH
+tests?</p>
+</li>
+<li>
+<p>Is the test passing on CI for all affected branches (up to trunk, if
+applicable)? Are there any regressions?</p>
+</li>
+<li>
+<p>If patch affects read/write path, did we test for performance
+regressions w/multiple workloads?</p>
+</li>
+<li>
+<p>If adding a new feature, were tests added and performed confirming it
+meets the expected SLA/use-case requirements for the feature?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="logging"><a class="anchor" href="#logging"></a><strong>Logging</strong></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Are logging statements logged at the correct level?</p>
+</li>
+<li>
+<p>Are there logs in the critical path that could affect performance?</p>
+</li>
+<li>
+<p>Is there any log that could be added to communicate status or
+troubleshoot potential problems in this feature?</p>
+</li>
+<li>
+<p>Can any unnecessary logging statement be removed?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="how_to_commit.html">How to commit</a></span>
+  <span class="next"><a href="patches.html">Patches</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p> © 2020 <a href="https://apache.org">The Apache Software Foundation.</a> Apache, the Apache feather logo, and Apache Cassandra are trademarks of The Apache Software Foundation.
+   <a href="https://twitter.com/cassandra"
+           class="twitter-follow-button"
+           data-show-count="false" data-size="large">Follow @cassandra</a>
+           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <a href="https://twitter.com/intent/tweet?button_hashtag=cassandra"
+           class="twitter-hashtag-button"
+           data-size="large"
+           data-related="ApacheCassandra">Tweet #cassandra</a>
+  <a class="subscribe-rss" href="/feed.xml" title="Subscribe to Blog via RSS"><img src="../../_/img/Feed-icon.svg"></a>
+  </p>
+</footer>
+<script>
+  window.antora = window.antora || {}
+  window.antora.basePath = '../..'
+  window.antora.pagePath = '/Website/development/how_to_review.html'
+</script>
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/vendor/search.js"></script>
+<script async src="../../_/../search-index.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<!-- Javascript. Placed here so pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/underscore-min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </body>
+</html>

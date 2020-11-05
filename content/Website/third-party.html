@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Third-party projects :: Cassandra Website DEV</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="stylesheet" href="../_/css/search.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/build">&nbsp;&nbsp;&nbsp;<img src="../_/img/cassandra_logo.png"></a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://cassandra.apache.org">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/download/">Download</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.11.6/apache-cassandra-3.11.6-bin.tar.gz">Latest</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.11.6/apache-cassandra-3.11.6-bin.tar.gz">3.x</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.0.20/apache-cassandra-3.0.20-bin.tar.gz">3.0</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/2.1.21/apache-cassandra-2.1.21-bin.tar.gz">2.1</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/doc/">Documentation</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/">Latest</a>
+            <a class="navbar-item" href="">3.x</a>
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/old/CQL-3.0.html">3.0</a>
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/old/CQL-2.1.html">2.1</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/community/">Community</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://lists.apache.org/list.html?dev@cassandra.apache.org">Developer Mailing List</a>
+            <a class="navbar-item" href="https://lists.apache.org/list.html?user@cassandra.apache.org">User Mailing List</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/blog/">Blog</a>
+	</div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar2">
+    <div class="navbar2-brand">
+      <a class="navbar2-item href="https://asf.org"><img src="../_/img/asf_feather.png" height="70%">&nbsp;&nbsp;&nbsp;Apache Software Foundation / Apache Cassandra</a>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Website" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Website</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bugs.html">How to report bugs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contactus.html">Contact us</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="development/index.html">Contribute to Cassandra code</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/gettingstarted.html">Getting started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/ide.html">IDE</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/testing.html">Testing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/code_style.html">Code style</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/how_to_commit.html">How to commit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/how_to_review.html">How to review</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/patches.html">Patches</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/ci.html">CI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/dependencies.html">Dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/release_process.html">Release process</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="development/documentation.html">Contribute to the documentation</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Website</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Cassandra</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../Cassandra/4.0/index.html">4.0-beta1</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../Cassandra/3.11/index.html">3.11</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Website</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Website</a></li>
+    <li><a href="third-party.html">Third-party projects</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/build/cassandra-site/site-content/source/modules/ROOT/pages/third-party.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Third-party projects</h1>
+<div class="sect1">
+<h2 id="third-party-projects"><a class="anchor" href="#third-party-projects"></a>Third-party projects</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="cassandra-as-a-service-cloud-offerings"><a class="anchor" href="#cassandra-as-a-service-cloud-offerings"></a>Cassandra as-a-Service cloud offerings</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://aiven.io/cassandra">Aiven for Apache Cassandra</a>: Aiven for
+Apache Cassandra is a fully managed NoSQL database, deployable in the
+cloud of your choice. Snap it into your existing workflows with the
+click of a button, automate away the mundane tasks, and focus on
+building your core apps. Now running Cassandra 3.11.</p>
+</li>
+<li>
+<p><a href="https://aws.amazon.com/keyspaces/">Amazon Keyspaces (for Apache
+Cassandra)</a>: Scalable, highly available, and managed Apache
+Cassandra–compatible database service.</p>
+</li>
+<li>
+<p><a href="https://astra.datastax.com">DataStax Astra</a>: Cloud-native database
+as-a-service built on Apache Cassandra™ complete with a free-tier and
+CQL, REST and GraphQL APIs for faster development. Deployable in AWS and
+GCP.</p>
+</li>
+<li>
+<p><a href="https://www.instaclustr.com/solutions/managed-apache-cassandra">Instaclustr
+Hosted &amp; Managed Apache Cassandra as a Service</a>: Instaclustr provides a
+fully managed and SOC 2 certified hosted &amp; managed service for Apache
+Cassandra® on AWS, Azure, GCP and IBM Cloud.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cassandra-installation-tools"><a class="anchor" href="#cassandra-installation-tools"></a>Cassandra installation tools</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://hub.docker.com/_/cassandra">Docker community Cassandra images</a>:
+Docker images for Apache Cassandra maintained by the Docker community</p>
+</li>
+<li>
+<p><a href="https://downloads.datastax.com/#desktop">DataStax Desktop</a>:
+Cross-platform (Windows, MacOSX, Linux) application that allows
+developers to quickly explore Apache Cassandra™ with a few clicks on
+their laptop, complete with tutorials and walkthroughs.</p>
+</li>
+<li>
+<p><a href="https://github.com/thelastpickle/tlp-cluster">The Last Pickle
+tlp-cluster</a>: tlp-cluster, a tool for launching Cassandra clusters in
+AWS (DataStax)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cassandra-tools"><a class="anchor" href="#cassandra-tools"></a>Cassandra tools</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://cassandra.link">cassandra.link</a>: Curated site with tools, along
+with <a href="https://cassandra.tools">cassandra.tools</a>.</p>
+</li>
+<li>
+<p><a href="https://github.com/criteo/cassandra_exporter">Cassandra Prometheus
+Exporter</a>: Standalone application which exports Cassandra metrics
+through a prometheus friendly endpoint</p>
+</li>
+<li>
+<p><a href="https://downloads.datastax.com/#bulk-loader">DataStax Bulk Loader</a>:
+Easy-to-use command line utility for loading and unloading JSON or CSV
+files to/from the database, counting rows in tables and identifying
+large partitions.</p>
+</li>
+<li>
+<p><a href="https://github.com/datastax/metric-collector-for-apache-cassandra">DataStax
+Metrics Collector for Cassandra</a>: Based on Collectd, aggregates OS and
+Cassandra metrics along with diagnostic events to facilitate problem
+resolution and remediation</p>
+</li>
+<li>
+<p><a href="https://hackolade.com/nosqldb.html#cassandra">Hackolade</a>: Visual data
+modeling tool for Cassandra</p>
+</li>
+<li>
+<p><a href="https://github.com/thelastpickle/cassandra-medusa">The Last Pickle
+Medusa</a>: Apache Cassandra Backup and Restore Tool (DataStax)</p>
+</li>
+<li>
+<p><a href="https://github.com/thelastpickle/cassandra-reaper">The Last Pickle
+Reaper</a>: Automated repair tool for Apache Cassandra (DataStax)</p>
+</li>
+<li>
+<p><a href="https://github.com/thelastpickle/tlp-stress">The Last Pickle Cassandra
+stress tool, tlp-stress</a>: A workload-centric stress tool for Apache
+Cassandra. Designed for simplicity, no math degree required. (DataStax)</p>
+</li>
+<li>
+<p><a href="https://github.com/nosqlbench/nosqlbench">NoSQLBench</a>: Pluggable
+benchmarking suite for Cassandra and other distributed systems</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cassandra-kubernetes-operators"><a class="anchor" href="#cassandra-kubernetes-operators"></a>Cassandra Kubernetes operators</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/mesosphere/kudo-cassandra-operator">D2iQ Cassandra
+Kudo Operator</a>: The KUDO Cassandra Operator makes it easy to deploy and
+manage Apache Cassandra on Kubernetes.</p>
+</li>
+<li>
+<p><a href="https://github.com/datastax/cass-operator">DataStax cass-operator</a>: The
+DataStax Kubernetes Operator for Apache Cassandra</p>
+</li>
+<li>
+<p><a href="https://github.com/instaclustr/cassandra-operator">Instaclustr
+cassandra-operator</a>: The Cassandra operator manages Cassandra clusters
+deployed to Kubernetes and automates tasks related to operating a
+Cassandra cluster.</p>
+</li>
+<li>
+<p><a href="https://orange-opensource.github.io/casskop/">Orange CassKop</a>: The
+Orange Cassandra operator is a Kubernetes operator to automate
+provisioning, management, autoscaling and operations of Apache Cassandra
+clusters deployed to K8s.</p>
+</li>
+<li>
+<p><a href="https://github.com/sky-uk/cassandra-operator">Sky Cassandra Operator</a>:
+The Sky Cassandra Operator is a Kubernetes operator that manages
+Cassandra clusters inside Kubernetes.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cassandra-management-sidecars"><a class="anchor" href="#cassandra-management-sidecars"></a>Cassandra management sidecars</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/apache/cassandra-sidecar">Apache Cassandra
+cassandra-sidecar</a>: Sidecar for the highly scalable Apache Cassandra
+database, built as part of the Apache Cassandra project.</p>
+</li>
+<li>
+<p><a href="https://github.com/datastax/management-api-for-apache-cassandra">DataStax
+Management API for Apache Cassandra</a>: RESTful / Secure Management
+Sidecar for Apache Cassandra</p>
+</li>
+<li>
+<p><a href="https://github.com/datastax/spring-boot">DataStax Spring Boot</a>: Spring
+Boot extension</p>
+</li>
+<li>
+<p><a href="https://github.com/instaclustr/cassandra-sidecar">Instaclustr
+cassandra-sidecar</a>: This repository is home of a sidecar for Apache
+Cassandra database. Sidecar is meant to be run alongside of Cassandra
+instance and sidecar talks to Cassandra via JMX.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="developer-frameworks"><a class="anchor" href="#developer-frameworks"></a>Developer Frameworks</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://r4fek.github.io/django-cassandra-engine/">Django Cassandra
+Engine</a>: Cassandra backend for Django Framework that allows you to use
+Cqlengine directly in your project.</p>
+</li>
+<li>
+<p><a href="https://express-cassandra.readthedocs.io/en/stable/">Express
+Cassandra</a>: Express-Cassandra is a Cassandra ORM/ODM/OGM for NodeJS with
+Elassandra &amp; JanusGraph Support.</p>
+</li>
+<li>
+<p><a href="https://quarkus.io/guides/cassandra">Quarkus extension for Apache
+Cassandra</a>: An Apache Cassandra&#174; extension for Quarkus. Quarkus is A
+Kubernetes Native Java stack tailored for OpenJDK HotSpot and GraalVM,
+crafted from the best of breed Java libraries and standards.</p>
+</li>
+<li>
+<p><a href="https://spring.io/projects/spring-data-cassandra">Spring Data
+Cassandra</a>: With the power to stay at a high level with annotated POJOs,
+or at a low level with high performance data ingestion capabilities, the
+Spring Data for Apache Cassandra templates are sure to meet every
+application need</p>
+</li>
+<li>
+<p><a href="https://www.testcontainers.org/modules/databases/cassandra/">TestContainers</a>:
+Testcontainers is a Java library that supports JUnit tests, providing
+lightweight, throwaway instances of common databases, Selenium web
+browsers, or anything else that can run in a Docker container.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cassandra-connectors"><a class="anchor" href="#cassandra-connectors"></a>Cassandra connectors</h3>
+<div class="sect3">
+<h4 id="apache-kafka"><a class="anchor" href="#apache-kafka"></a>Apache Kafka</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.confluent.io/hub/confluentinc/kafka-connect-cassandra">Confluent
+Connect Cassandra</a>: The Confluent Cassandra Sink Connector is used to
+move messages from Kafka into Apache Cassandra.</p>
+</li>
+<li>
+<p><a href="https://downloads.datastax.com/#akc">DataStax Sink Connector</a>: The
+DataStax Apache Kafka Connector automatically takes records from Kafka
+topics and writes them to a DataStax Enterprise or Apache Cassandra™
+database. This sink connector is deployed in the Kafka Connect framework
+and removes the need to build a custom solution to move data between
+these two systems.</p>
+</li>
+<li>
+<p><a href="https://github.com/debezium/debezium-incubator/tree/master/debezium-connector-cassandra">Debezium
+Source Connector</a>: This connector is currently in incubating state, and
+Cassandra is different from the other Debezium connectors since it is
+not implemented on top of the Kafka Connect framework.</p>
+</li>
+<li>
+<p><a href="https://docs.lenses.io/connectors/sink/cassandra.html">Lenses Sink
+Connector</a>: The Cassandra Sink allows you to write events from Kafka to
+Cassandra. The connector converts the value from the Kafka Connect
+SinkRecords to JSON and uses Cassandra’s JSON insert functionality to
+insert the rows. The task expects pre-created tables in Cassandra.</p>
+</li>
+<li>
+<p><a href="https://docs.lenses.io/connectors/source/cassandra.html">Lenses Source
+Connector</a>: Kafka Connect Cassandra is a Source Connector for reading
+data from Cassandra and writing to Kafka.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="apache-spark"><a class="anchor" href="#apache-spark"></a>Apache Spark</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/datastax/spark-cassandra-connector">DataStax Spark
+Cassandra Connector</a>: This library lets you expose Cassandra tables as
+Spark RDDs and Datasets/DataFrames, write Spark RDDs and
+Datasets/DataFrames to Cassandra tables, and execute arbitrary CQL
+queries in your Spark applications.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="apache-flink"><a class="anchor" href="#apache-flink"></a>Apache Flink</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://ci.apache.org/projects/flink/flink-docs-stable/dev/connectors/cassandra.html">Flink
+Sink Connector</a>: This connector provides sinks that writes data into a
+Apache Cassandra database.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="apache-pulsar"><a class="anchor" href="#apache-pulsar"></a>Apache Pulsar</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://pulsar.apache.org/docs/en/io-quickstart/#connect-pulsar-to-cassandra">Pulsar
+Sink Connector</a>: The Pulsar Cassandra Sink connector is used to write
+messages to a Cassandra Cluster.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="professional-support"><a class="anchor" href="#professional-support"></a>Professional Support</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://luna.datastax.com/">DataStax Luna</a>,
+<a href="https://www.datastax.com/services/support/premium-support">DataStax
+Premium Support</a>,
+<a href="https://www.datastax.com/services/professional-services">DataStax
+Professional Services</a></p>
+</li>
+<li>
+<p><a href="https://www.instaclustr.com/services/">Instacluster</a></p>
+</li>
+<li>
+<p><a href="https://opencredo.com/about-us/">Open Credo</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p> © 2020 <a href="https://apache.org">The Apache Software Foundation.</a> Apache, the Apache feather logo, and Apache Cassandra are trademarks of The Apache Software Foundation.
+   <a href="https://twitter.com/cassandra"
+           class="twitter-follow-button"
+           data-show-count="false" data-size="large">Follow @cassandra</a>
+           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <a href="https://twitter.com/intent/tweet?button_hashtag=cassandra"
+           class="twitter-hashtag-button"
+           data-size="large"
+           data-related="ApacheCassandra">Tweet #cassandra</a>
+  <a class="subscribe-rss" href="/feed.xml" title="Subscribe to Blog via RSS"><img src="../_/img/Feed-icon.svg"></a>
+  </p>
+</footer>
+<script>
+  window.antora = window.antora || {}
+  window.antora.basePath = '..'
+  window.antora.pagePath = '/Website/third-party.html'
+</script>
+<script src="../_/js/site.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/vendor/search.js"></script>
+<script async src="../_/../search-index.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<!-- Javascript. Placed here so pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/underscore-min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </body>
+</html>

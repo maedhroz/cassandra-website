@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Welcome to Apache Cassandra&#8217;s documentation! :: Cassandra Website DEV</title>
+    <link rel="next" href="glossary.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="stylesheet" href="../_/css/search.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/build">&nbsp;&nbsp;&nbsp;<img src="../_/img/cassandra_logo.png"></a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://cassandra.apache.org">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/download/">Download</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.11.6/apache-cassandra-3.11.6-bin.tar.gz">Latest</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.11.6/apache-cassandra-3.11.6-bin.tar.gz">3.x</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.0.20/apache-cassandra-3.0.20-bin.tar.gz">3.0</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/2.1.21/apache-cassandra-2.1.21-bin.tar.gz">2.1</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/doc/">Documentation</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/">Latest</a>
+            <a class="navbar-item" href="">3.x</a>
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/old/CQL-3.0.html">3.0</a>
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/old/CQL-2.1.html">2.1</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/community/">Community</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://lists.apache.org/list.html?dev@cassandra.apache.org">Developer Mailing List</a>
+            <a class="navbar-item" href="https://lists.apache.org/list.html?user@cassandra.apache.org">User Mailing List</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/blog/">Blog</a>
+	</div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar2">
+    <div class="navbar2-brand">
+      <a class="navbar2-item href="https://asf.org"><img src="../_/img/asf_feather.png" height="70%">&nbsp;&nbsp;&nbsp;Apache Software Foundation / Apache Cassandra</a>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Website" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Website</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bugs.html">How to report bugs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contactus.html">Contact us</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="development/index.html">Contribute to Cassandra code</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/gettingstarted.html">Getting started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/ide.html">IDE</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/testing.html">Testing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/code_style.html">Code style</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/how_to_commit.html">How to commit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/how_to_review.html">How to review</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/patches.html">Patches</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/ci.html">CI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/dependencies.html">Dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="development/release_process.html">Release process</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="development/documentation.html">Contribute to the documentation</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Website</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Cassandra</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../Cassandra/4.0/index.html">4.0-beta1</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../Cassandra/3.11/index.html">3.11</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Website</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link is-current"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Website</a></li>
+    <li><a href="index.html">Welcome to Apache Cassandra&#8217;s documentation!</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/build/cassandra-site/site-content/source/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Welcome to Apache Cassandra&#8217;s documentation!</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the official documentation for <a href="http://cassandra.apache.org">Apache Cassandra</a>.
+If you would like to contribute to this documentation, you are welcome
+to do so by submitting your contribution like any other patch following
+<a href="https://wiki.apache.org/cassandra/HowToContribute">these instructions</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="main-documentation"><a class="anchor" href="#main-documentation"></a>Main documentation</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../Cassandra/3.11/cassandra/getting_started/index.html" class="page">Getting started</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Newbie starting point</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../Cassandra/3.11/cassandra/new/index.html" class="page">New in 4.0</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>What&#8217;s new in Cassandra 4.0</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../Cassandra/3.11/cassandra/architecture/index.html" class="page">Architecture</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Cassandra&#8217;s big picture</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../Cassandra/3.11/cassandra/data_modeling/index.html" class="page">Data modeling</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Hint: it&#8217;s not relational</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../Cassandra/3.11/cassandra/cql/index.html" class="page">Cassandra Query Language (CQL)</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>CQL reference documentation</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../Cassandra/3.11/cassandra/configuration/index.html" class="page">Configuration</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Cassandra&#8217;s handles and knobs</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../Cassandra/3.11/cassandra/operating/index.html" class="page">Operation</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The operator&#8217;s corner</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../Cassandra/3.11/cassandra/tools/index.html" class="page">Tools</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>cqlsh, nodetool, and others</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../Cassandra/3.11/cassandra/troubleshooting/index.html" class="page">Troubleshooting</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>What to look for when you have a problem</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="development/index.html" class="page">Development</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Learn how to improve Cassandra and contribute patches</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="../Cassandra/3.11/cassandra/faq/index.html" class="page">FAQ</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Frequently asked questions</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="plugins/index.html" class="page">Plug-ins</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Third-party plug-ins</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="meta-information"><a class="anchor" href="#meta-information"></a>Meta information</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="bugs.html" class="page">Reporting bugs</a></p>
+</li>
+<li>
+<p><a href="contactus.html" class="page">Contact us</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-rest-of-the-information"><a class="anchor" href="#the-rest-of-the-information"></a>The rest of the information</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="community.html" class="page">Community</a></p>
+</li>
+<li>
+<p><a href="download.html" class="page">Download</a></p>
+</li>
+<li>
+<p><a href="native_protocol.html" class="page">Native Protocols</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="next"><a href="glossary.html">Glossary</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p> © 2020 <a href="https://apache.org">The Apache Software Foundation.</a> Apache, the Apache feather logo, and Apache Cassandra are trademarks of The Apache Software Foundation.
+   <a href="https://twitter.com/cassandra"
+           class="twitter-follow-button"
+           data-show-count="false" data-size="large">Follow @cassandra</a>
+           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <a href="https://twitter.com/intent/tweet?button_hashtag=cassandra"
+           class="twitter-hashtag-button"
+           data-size="large"
+           data-related="ApacheCassandra">Tweet #cassandra</a>
+  <a class="subscribe-rss" href="/feed.xml" title="Subscribe to Blog via RSS"><img src="../_/img/Feed-icon.svg"></a>
+  </p>
+</footer>
+<script>
+  window.antora = window.antora || {}
+  window.antora.basePath = '..'
+  window.antora.pagePath = '/Website/index.html'
+</script>
+<script src="../_/js/site.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/vendor/search.js"></script>
+<script async src="../_/../search-index.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<!-- Javascript. Placed here so pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/underscore-min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </body>
+</html>

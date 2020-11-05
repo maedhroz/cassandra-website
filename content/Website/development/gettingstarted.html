@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Getting Started :: Cassandra Website DEV</title>
+    <link rel="prev" href="index.html">
+    <link rel="next" href="ide.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/build">&nbsp;&nbsp;&nbsp;<img src="../../_/img/cassandra_logo.png"></a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://cassandra.apache.org">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/download/">Download</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.11.6/apache-cassandra-3.11.6-bin.tar.gz">Latest</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.11.6/apache-cassandra-3.11.6-bin.tar.gz">3.x</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.0.20/apache-cassandra-3.0.20-bin.tar.gz">3.0</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/2.1.21/apache-cassandra-2.1.21-bin.tar.gz">2.1</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/doc/">Documentation</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/">Latest</a>
+            <a class="navbar-item" href="">3.x</a>
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/old/CQL-3.0.html">3.0</a>
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/old/CQL-2.1.html">2.1</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/community/">Community</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://lists.apache.org/list.html?dev@cassandra.apache.org">Developer Mailing List</a>
+            <a class="navbar-item" href="https://lists.apache.org/list.html?user@cassandra.apache.org">User Mailing List</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/blog/">Blog</a>
+	</div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar2">
+    <div class="navbar2-brand">
+      <a class="navbar2-item href="https://asf.org"><img src="../../_/img/asf_feather.png" height="70%">&nbsp;&nbsp;&nbsp;Apache Software Foundation / Apache Cassandra</a>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Website" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Website</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../bugs.html">How to report bugs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../contactus.html">Contact us</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Contribute to Cassandra code</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="gettingstarted.html">Getting started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ide.html">IDE</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="testing.html">Testing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="code_style.html">Code style</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="how_to_commit.html">How to commit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="how_to_review.html">How to review</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="patches.html">Patches</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ci.html">CI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dependencies.html">Dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="release_process.html">Release process</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="documentation.html">Contribute to the documentation</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Website</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Cassandra</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../Cassandra/4.0/index.html">4.0-beta1</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../Cassandra/3.11/index.html">3.11</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Website</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Website</a></li>
+    <li><a href="index.html">Contribute to Cassandra code</a></li>
+    <li><a href="gettingstarted.html">Getting started</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/build/cassandra-site/site-content/source/modules/ROOT/pages/development/gettingstarted.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Getting Started</h1>
+<div class="sect1">
+<h2 id="initial-contributions"><a class="anchor" href="#initial-contributions"></a>Initial Contributions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Writing a new feature is just one way to contribute to the Cassandra
+project. In fact, making sure that supporting tasks, such as QA,
+documentation and helping users, keep up with the development of new
+features is an ongoing challenge for the project (and most open source
+projects). So, before firing up your IDE to create that new feature,
+we&#8217;d suggest you consider some of the following activities as a way of
+introducing yourself to the project and getting to know how things
+work.::
+  * Add to or update the documentation
+  * Answer questions on the user list
+  * Review and test a submitted patch
+  * Investigate and fix a reported bug
+  * Create unit tests and d-tests</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="updating-documentation"><a class="anchor" href="#updating-documentation"></a>Updating documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Cassandra documentation is maintained in the Cassandra source
+repository along with the Cassandra code base. To submit changes to the
+documentation, follow the standard process for submitting a patch
+(<code>patches</code>).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="answering-questions-on-the-user-list"><a class="anchor" href="#answering-questions-on-the-user-list"></a>Answering questions on the user list</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Subscribe to the user list, look out for some questions you know the
+answer to and reply with an answer. Simple as that! See the
+<a href="http://cassandra.apache.org/community/">community</a> page for details on
+how to subscribe to the mailing list.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reviewing-and-testing-a-submitted-patch"><a class="anchor" href="#reviewing-and-testing-a-submitted-patch"></a>Reviewing and testing a submitted patch</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Reviewing patches is not the sole domain of committers, if others have
+reviewed a patch it can reduce the load on the committers allowing them
+to write more great features or review more patches. Follow the
+instructions in <a href="#development/development_how_to_review">How to review</a> or create a build with the
+patch and test it with your own workload. Add a comment to the JIRA
+ticket to let others know what you have done and the results of your
+work. (For example, "I tested this performance enhacement on our
+application&#8217;s standard production load test and found a 3%
+improvement.")</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="investigate-andor-fix-a-reported-bug"><a class="anchor" href="#investigate-andor-fix-a-reported-bug"></a>Investigate and/or fix a reported bug</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Often, the hardest work in fixing a bug is reproducing it. Even if you
+don&#8217;t have the knowledge to produce a fix, figuring out a way to
+reliable reproduce an issues can be a massive contribution to getting a
+bug fixed. Document your method of reproduction in a JIRA comment or,
+better yet, produce an automated test that reproduces the issue and
+attach it to the ticket. If you go as far as producing a fix, follow the
+process for submitting a patch (<code>patches</code>).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-unit-tests-and-dtests"><a class="anchor" href="#create-unit-tests-and-dtests"></a>Create unit tests and Dtests</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Test coverage in Cassandra is improving but, as with most code bases, it
+could benefit from more automated test coverage. Before starting work in
+an area, consider reviewing and enhancing the existing test coverage.
+This will both improve your knowledge of the code before you start on an
+enhancement and reduce the chances of your change in introducing new
+issues. See <code>testing</code> and <code>patches</code> for more detail.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="index.html">Contribute to Cassandra code</a></span>
+  <span class="next"><a href="ide.html">IDE</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p> © 2020 <a href="https://apache.org">The Apache Software Foundation.</a> Apache, the Apache feather logo, and Apache Cassandra are trademarks of The Apache Software Foundation.
+   <a href="https://twitter.com/cassandra"
+           class="twitter-follow-button"
+           data-show-count="false" data-size="large">Follow @cassandra</a>
+           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <a href="https://twitter.com/intent/tweet?button_hashtag=cassandra"
+           class="twitter-hashtag-button"
+           data-size="large"
+           data-related="ApacheCassandra">Tweet #cassandra</a>
+  <a class="subscribe-rss" href="/feed.xml" title="Subscribe to Blog via RSS"><img src="../../_/img/Feed-icon.svg"></a>
+  </p>
+</footer>
+<script>
+  window.antora = window.antora || {}
+  window.antora.basePath = '../..'
+  window.antora.pagePath = '/Website/development/gettingstarted.html'
+</script>
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/vendor/search.js"></script>
+<script async src="../../_/../search-index.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<!-- Javascript. Placed here so pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/underscore-min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dependency Management :: Cassandra Website DEV</title>
+    <link rel="prev" href="ci.html">
+    <link rel="next" href="release_process.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/search.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/build">&nbsp;&nbsp;&nbsp;<img src="../../_/img/cassandra_logo.png"></a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://cassandra.apache.org">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/download/">Download</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.11.6/apache-cassandra-3.11.6-bin.tar.gz">Latest</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.11.6/apache-cassandra-3.11.6-bin.tar.gz">3.x</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.0.20/apache-cassandra-3.0.20-bin.tar.gz">3.0</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/2.1.21/apache-cassandra-2.1.21-bin.tar.gz">2.1</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/doc/">Documentation</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/">Latest</a>
+            <a class="navbar-item" href="">3.x</a>
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/old/CQL-3.0.html">3.0</a>
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/old/CQL-2.1.html">2.1</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/community/">Community</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://lists.apache.org/list.html?dev@cassandra.apache.org">Developer Mailing List</a>
+            <a class="navbar-item" href="https://lists.apache.org/list.html?user@cassandra.apache.org">User Mailing List</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/blog/">Blog</a>
+	</div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar2">
+    <div class="navbar2-brand">
+      <a class="navbar2-item href="https://asf.org"><img src="../../_/img/asf_feather.png" height="70%">&nbsp;&nbsp;&nbsp;Apache Software Foundation / Apache Cassandra</a>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Website" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Website</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../bugs.html">How to report bugs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../contactus.html">Contact us</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Contribute to Cassandra code</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="gettingstarted.html">Getting started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ide.html">IDE</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="testing.html">Testing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="code_style.html">Code style</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="how_to_commit.html">How to commit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="how_to_review.html">How to review</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="patches.html">Patches</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ci.html">CI</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="dependencies.html">Dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="release_process.html">Release process</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="documentation.html">Contribute to the documentation</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Website</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Cassandra</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../Cassandra/4.0/index.html">4.0-beta1</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../Cassandra/3.11/index.html">3.11</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Website</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Website</a></li>
+    <li><a href="index.html">Contribute to Cassandra code</a></li>
+    <li><a href="dependencies.html">Dependencies</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/build/cassandra-site/site-content/source/modules/ROOT/pages/development/dependencies.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Dependency Management</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Managing libraries for Cassandra is a bit less straight forward compared
+to other projects, as the build process is based on ant, maven and
+manually managed jars. Make sure to follow the steps below carefully and
+pay attention to any emerging issues in the <code>ci</code> and reported related
+issues on Jira/ML, in case of any project dependency changes.</p>
+</div>
+<div class="paragraph">
+<p>As Cassandra is an Apache product, all included libraries must follow
+Apache&#8217;s <a href="https://www.apache.org/legal/resolved.html">software license
+requirements</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="required-steps-to-add-or-update-libraries"><a class="anchor" href="#required-steps-to-add-or-update-libraries"></a>Required steps to add or update libraries</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Add or replace jar file in <code>lib</code> directory</p>
+</li>
+<li>
+<p>Add or update <code>lib/license</code> files</p>
+</li>
+<li>
+<p>Update dependencies in <code>build.xml</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Add to <code>parent-pom</code> with correct version</p>
+</li>
+<li>
+<p>Add to <code>all-pom</code> if simple Cassandra dependency (see below)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pom-file-types"><a class="anchor" href="#pom-file-types"></a>POM file types</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>parent-pom</strong> - contains all dependencies with the respective version.
+All other poms will refer to the artifacts with specified versions
+listed here.</p>
+</li>
+<li>
+<p><strong>build-deps-pom(-sources)</strong> + <strong>coverage-deps-pom</strong> - used by <code>ant build</code>
+compile target. Listed dependenices will be resolved and copied to
+<code>build/lib/{jar,sources}</code> by executing the
+<code>maven-ant-tasks-retrieve-build</code> target. This should contain libraries
+that are required for build tools (grammar, docs, instrumentation), but
+are not shipped as part of the Cassandra distribution.</p>
+</li>
+<li>
+<p><strong>test-deps-pom</strong> - refered by <code>maven-ant-tasks-retrieve-test</code> to
+retrieve and save dependencies to <code>build/test/lib</code>. Exclusively used
+during JUnit test execution.</p>
+</li>
+<li>
+<p><strong>all-pom</strong> - pom for
+<a href="https://mvnrepository.com/artifact/org.apache.cassandra/cassandra-all">cassandra-all.jar</a>
+that can be installed or deployed to public maven repos via
+<code>ant publish</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting-and-conflict-resolution"><a class="anchor" href="#troubleshooting-and-conflict-resolution"></a>Troubleshooting and conflict resolution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here are some useful commands that may help you out resolving conflicts.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ant realclean</code> - gets rid of the build directory, including build
+artifacts.</p>
+</li>
+<li>
+<p><code>mvn dependency:tree -f build/apache-cassandra-*-SNAPSHOT.pom -Dverbose -Dincludes=org.slf4j</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>shows transitive dependency tree for artifacts, e.g. org.slf4j. In
+case the command above fails due to a missing parent pom file, try
+running <code>ant mvn-install</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>rm ~/.m2/repository/org/apache/cassandra/apache-cassandra/</code> - removes
+cached local Cassandra maven artifacts</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="ci.html">CI</a></span>
+  <span class="next"><a href="release_process.html">Release process</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p> © 2020 <a href="https://apache.org">The Apache Software Foundation.</a> Apache, the Apache feather logo, and Apache Cassandra are trademarks of The Apache Software Foundation.
+   <a href="https://twitter.com/cassandra"
+           class="twitter-follow-button"
+           data-show-count="false" data-size="large">Follow @cassandra</a>
+           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <a href="https://twitter.com/intent/tweet?button_hashtag=cassandra"
+           class="twitter-hashtag-button"
+           data-size="large"
+           data-related="ApacheCassandra">Tweet #cassandra</a>
+  <a class="subscribe-rss" href="/feed.xml" title="Subscribe to Blog via RSS"><img src="../../_/img/Feed-icon.svg"></a>
+  </p>
+</footer>
+<script>
+  window.antora = window.antora || {}
+  window.antora.basePath = '../..'
+  window.antora.pagePath = '/Website/development/dependencies.html'
+</script>
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/vendor/search.js"></script>
+<script async src="../../_/../search-index.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<!-- Javascript. Placed here so pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/underscore-min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </body>
+</html>

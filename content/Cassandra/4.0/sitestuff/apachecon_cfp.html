@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Announcing the 2019 Apache Cassandra Summit :: Cassandra Website DEV</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/search.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/build">&nbsp;&nbsp;&nbsp;<img src="../../../_/img/cassandra_logo.png"></a>
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://cassandra.apache.org">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/download/">Download</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.11.6/apache-cassandra-3.11.6-bin.tar.gz">Latest</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.11.6/apache-cassandra-3.11.6-bin.tar.gz">3.x</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/3.0.20/apache-cassandra-3.0.20-bin.tar.gz">3.0</a>
+            <a class="navbar-item" href="https://www.apache.org/dyn/closer.lua/cassandra/2.1.21/apache-cassandra-2.1.21-bin.tar.gz">2.1</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/doc/">Documentation</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/">Latest</a>
+            <a class="navbar-item" href="">3.x</a>
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/old/CQL-3.0.html">3.0</a>
+            <a class="navbar-item" href="https://cassandra.apache.org/doc/old/CQL-2.1.html">2.1</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/community/">Community</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://lists.apache.org/list.html?dev@cassandra.apache.org">Developer Mailing List</a>
+            <a class="navbar-item" href="https://lists.apache.org/list.html?user@cassandra.apache.org">User Mailing List</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://cassandra.apache.org/blog/">Blog</a>
+	</div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar2">
+    <div class="navbar2-brand">
+      <a class="navbar2-item href="https://asf.org"><img src="../../../_/img/asf_feather.png" height="70%">&nbsp;&nbsp;&nbsp;Apache Software Foundation / Apache Cassandra</a>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Cassandra" data-version="4.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Cassandra</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Main</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Website/glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Website/bugs.html">How to report bugs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Website/contactus.html">Contact us</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="community.html">Community</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="third-party.html">Third-party</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="download.html">Download</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Cassandra</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cassandra/getting_started/index.html">Getting Started</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/getting_started/installing.html">Installing Cassandra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/getting_started/configuring.html">Configuring Cassandra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/getting_started/querying.html">Inserting and querying</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/getting_started/drivers.html">Client drivers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/getting_started/production.html">Production recommendations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cassandra/new/index.html">What&#8217;s new</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/new/java11.html">Support for Java 11</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/new/virtualtables.html">Virtual tables</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/new/auditlogging.html">Audit logging</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/new/fqllogging.html">Full query logging</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/new/messaging.html">Improved internode Messaging</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/new/streaming.html">Improved streaming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/new/transientreplication.html">Transient replication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cassandra/architecture/index.html">Architecture</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/architecture/overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/architecture/dynamo.html">Dynamo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/architecture/storage_engine.html">Storage engine</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/architecture/guarantees.html">Guarantees</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cassandra/data_modeling/index.html">Data modeling</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/data_modeling/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/data_modeling/data_modeling_conceptual.html">Conceptual data modeling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/data_modeling/data_modeling_rdbms.html">RDBMS design</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/data_modeling/data_modeling_queries.html">Defining application queries</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/data_modeling/data_modeling_logical.html">Logical data modeling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/data_modeling/data_modeling_physical.html">Physical data modeling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/data_modeling/data_modeling_refining.html">Evaluating and refining data models</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/data_modeling/data_modeling_schema.html">Defining database schema</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/data_modeling/data_modeling_tools.html">Cassandra data modeling tools</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cassandra/cql/index.html">Cassandra Query Language (CQL)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/cql/definitions.html">Definitions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/cql/types.html">Data types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/cql/ddl.html">Data definition (DDL)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/cql/dml.html">Data manipulation (DML)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/cql/operators.html">Operators</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/cql/indexes.html">Secondary indexes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/cql/mvs.html">Materialized views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/cql/functions.html">Functions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/cql/json.html">JSON</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/cql/security.html">Security</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/cql/triggers.html">Triggers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/cql/appendices.html">Appendices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/cql/changes.html">Changes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/cql/SASI.html">SASI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/cql/cql_singlefile.html">Single file of CQL information</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cassandra/configuration/index.html">Configuration</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/configuration/cass_yaml_file.html">cassandra.yaml</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/configuration/cass_rackdc_file.html">cassandra-rackdc.properties</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/configuration/cass_env_sh_file.html">cassandra-env.sh</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/configuration/cass_topo_file.html">cassandra-topologies.properties</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/configuration/cass_cl_archive_file.html">commitlog-archiving.properties</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/configuration/cass_logback_xml_file.html">logback.xml</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/configuration/cass_jvm_options_file.html">jvm-* files</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cassandra/operating/index.html">Operating</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/operating/snitch.html">Snitches</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/operating/topo_changes.html">Topology changes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/operating/repair.html">Repair</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/operating/read_repair.html">Read repair</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/operating/hints.html">Hints</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/operating/bloom_filters.html">Bloom filters</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/operating/compression.html">Compression</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/operating/cdc.html">Change Data Capture (CDC)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/operating/backups.html">Backups</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/operating/bulk_loading.html">Bulk loading</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/operating/metrics.html">Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/operating/security.html">Security</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/operating/hardware.html">Hardware</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/operating/audit_logging.html">Audit logging</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/operating/compaction/index.html">Compaction</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cassandra/tools/index.html">Tools</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/tools/cqlsh.html">cqlsh: the CQL shell</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/tools/nodetool/nodetool.html">nodetool</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/tools/sstable/index.html">SSTable tools</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/tools/cassandra_stress.html">cassandra-stress</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cassandra/troubleshooting/index.html">Troubleshooting</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/troubleshooting/finding_nodes.html">Finding misbehaving nodes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/troubleshooting/reading_logs.html">Reading Cassandra logs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/troubleshooting/use_nodetool.html">Using nodetool</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/troubleshooting/use_tools.html">Using external tools to deep-dive</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cassandra/development/index.html">Development</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/development/gettingstarted.html">Getting started</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/development/ide.html">Building and IDE integration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/development/testing.html">Testing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/development/patches.html">Contributing code changes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/development/code_style.html">Code style</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/development/how_to_review.html">Review checklist</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/development/how_to_commit.html">How to commit</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/development/documentation.html">Working on documentation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/development/ci.html">Jenkins CI environment</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/development/dependencies.html">Dependency management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../cassandra/development/release_process.html">Release process</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cassandra/faq/index.html">FAQ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cassandra/plugins/index.html">Plug-ins</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Cassandra</span>
+    <span class="version">4.0-beta1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Cassandra</span>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../index.html">4.0-beta1</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../3.11/index.html">3.11</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Website</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../Website/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../Website/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Cassandra</a></li>
+    <li><a href="apachecon_cfp.html">Announcing the 2019 Apache Cassandra Summit</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">4.0-beta1</button>
+  <div class="version-menu">
+    <a class="version is-current" href="apachecon_cfp.html">4.0-beta1</a>
+    <a class="version is-missing" href="../../3.11/index.html">3.11</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/polandll/cassandra/edit/doc_redo_asciidoc/doc/source/modules/sitestuff/pages/apachecon_cfp.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Announcing the 2019 Apache Cassandra Summit</h1>
+<div class="sect1">
+<h2 id="announcing-the-2019-apache-cassandra-summit"><a class="anchor" href="#announcing-the-2019-apache-cassandra-summit"></a>Announcing the 2019 Apache Cassandra Summit</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Join the Apache Cassandra community for the 2019 Apache Cassandra
+Summit, hosted with ApacheCon in Las Vegas, NV (Sept 9 - 13).</p>
+</div>
+<hr>
+<div class="sect2">
+<h3 id="apache-cassandra-at-apachecon"><a class="anchor" href="#apache-cassandra-at-apachecon"></a>Apache Cassandra at ApacheCon</h3>
+<div class="paragraph">
+<p><span class="image"><img src="/img/apachecon-2019.jpg" alt="ApacheCon 2019"></span>\{:style=``float: right;
+width: 400px''}</p>
+</div>
+<div class="paragraph">
+<p>For more information about other events at ApacheCon, see
+<a href="https://apachecon.com/acna19/index.html">ApacheCon 2019</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="day-one-next-generation-cassandra-conference-ngcc"><a class="anchor" href="#day-one-next-generation-cassandra-conference-ngcc"></a>Day One: Next Generation Cassandra Conference (NGCC)</h4>
+<div class="paragraph">
+<p>NGCC (Next Generation Cassandra Conference), a one-day event for Apache
+Cassandra contributors and large system operators to meet, discuss, and
+plan future development in the project. NGCC will take place on
+<strong>Tuesday, September 10th</strong>.</p>
+</div>
+<div class="paragraph">
+<p>NGCC is an advanced event targeted toward Apache Cassandra contributors
+and large system / platform operators. Content will focus on Cassandra
+internals and is geared toward those with detailed knowledge of the
+codebase and architecture. All are welcome to attend.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="day-two-apache-cassandra-summit"><a class="anchor" href="#day-two-apache-cassandra-summit"></a>Day Two: Apache Cassandra Summit</h4>
+<div class="paragraph">
+<p>The Apache Cassandra Summit, a one-day event for Apache Cassandra users
+to meet, network, and learn about what’s new and what’s coming in
+Cassandra. The Apache Cassandra Summit will be held on <strong>Wednesday, Sept
+11</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The Apache Cassandra Summit is targeted toward a wider audience. Topics
+should be interesting and accessible to those whose first introduction
+to Cassandra is at this event, and those who have been active in the
+community for many years.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="call-for-presentations"><a class="anchor" href="#call-for-presentations"></a>Call for Presentations</h3>
+<div class="paragraph">
+<p>We’re excited to announce the Call for Presentations is now open for
+both, closing Monday, May 13 at 2pm BST (UTC+1).</p>
+</div>
+<div class="sect3">
+<h4 id="apache-cassandra-summit-cfp-40-minute-presentation-5-minute-qa"><a class="anchor" href="#apache-cassandra-summit-cfp-40-minute-presentation-5-minute-qa"></a>Apache Cassandra Summit CFP (40-minute presentation, 5-minute Q&amp;A) –</h4>
+<div class="paragraph">
+<p><strong>Example proposals might include:</strong> - Lessons learned operating Apache
+Cassandra at scale. - Customizations and ways members of the community
+have extended Apache Cassandra to make it a great fit for their use
+case. - Stability improvements, performance enhancements, and new
+features in an upcoming Cassandra release. - Something we haven’t
+thought about that a general audience would be interested to hear.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="next-generation-cassandra-conference-cfp-30-minute-presentation-15m-breakout"><a class="anchor" href="#next-generation-cassandra-conference-cfp-30-minute-presentation-15m-breakout"></a>Next Generation Cassandra Conference CFP (30-minute presentation, 15m breakout) –</h4>
+<div class="paragraph">
+<p><strong>Example proposals might include:</strong> - Presentations from contributors and
+large operators covering pain points and proposals to address them -
+Planned or proposed improvements in specific areas of the Apache
+Cassandra codebase - Planned or proposed improvements we can make to
+strengthen and empower the Apache Cassandra community. - Something we
+haven’t thought about that advanced operators / contributors would be
+interested to hear.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://asf.jamhosted.net/cfp.html">Click here</a> to submit a proposal for
+the Apache Cassandra Summit or NGCC.</p>
+</div>
+<div class="paragraph">
+<p>When submitting, please ensure you select <code>Cassandra'' as the category.
+For NGCC submissions, please include </code>NGCC Proposal'' in the ``Optional
+Notes'' field.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p> © 2020 <a href="https://apache.org">The Apache Software Foundation.</a> Apache, the Apache feather logo, and Apache Cassandra are trademarks of The Apache Software Foundation.
+   <a href="https://twitter.com/cassandra"
+           class="twitter-follow-button"
+           data-show-count="false" data-size="large">Follow @cassandra</a>
+           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <a href="https://twitter.com/intent/tweet?button_hashtag=cassandra"
+           class="twitter-hashtag-button"
+           data-size="large"
+           data-related="ApacheCassandra">Tweet #cassandra</a>
+  <a class="subscribe-rss" href="/feed.xml" title="Subscribe to Blog via RSS"><img src="../../../_/img/Feed-icon.svg"></a>
+  </p>
+</footer>
+<script>
+  window.antora = window.antora || {}
+  window.antora.basePath = '../../..'
+  window.antora.pagePath = '/Cassandra/4.0/sitestuff/apachecon_cfp.html'
+</script>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/vendor/search.js"></script>
+<script async src="../../../_/../search-index.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<!-- Javascript. Placed here so pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/underscore-min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </body>
+</html>
